@@ -1,0 +1,46 @@
+1. Virtualization Technology Check
+2. Cloud Computing
+Fundamental reasons for cloud success:
+Scalability and elasticity
+Cost efficiency (pay-as-you-go model)
+Accessibility and global availability
+Rapid deployment and innovation
+Three pros:
+Reduced capital expenditure (no need for physical hardware)
+High availability and disaster recovery capabilities
+Automatic updates and maintenance
+Three cons:
+Potential security and privacy concerns
+Dependency on internet connectivity
+Possible vendor lock-in and unexpected costs
+3. 
+The primary function of a hypervisor is to create and run virtual machines by abstracting and managing
+the host's hardware resources, allowing multiple guest operating systems to run concurrently on a 
+single physical machine.
+4. 
+A virtual machine is a software-based emulation of a physical computer that runs an operating system 
+and applications, sharing the resources of the host machine through a hypervisor.
+5. 
+Server consolidation and better resource utilization
+Isolation and security between different environments
+Cost savings on hardware and energy
+Easy backup, recovery, and migration
+Testing and development flexibility
+6. 
+Server virtualization for data centers
+Development and testing environments
+Running legacy applications on modern hardware
+Desktop virtualization (VDI)
+Cloud computing and SaaS offerings
+7. b
+
+8. c
+
+9. c
+
+10. Purpose of Cloning a Virtual Machine
+The purpose of cloning a virtual machine is to create an exact copy of an existing VM, which is useful for:
+Rapid deployment of identical environments
+Backup and disaster recovery
+Testing configurations without affecting the original VM
+Scaling applications horizontally
