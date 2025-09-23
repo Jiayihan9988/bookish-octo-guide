@@ -1,0 +1,51 @@
+(a) Three Primary Cloud Service Models
+
+IaaS (Infrastructure as a Service)
+
+Provides virtualized computing resources over the internet
+Software Development Example: A team uses AWS EC2 to deploy custom-configured development servers where 
+they have full control over the operating system and middleware.
+PaaS (Platform as a Service)
+
+Provides platform allowing customers to develop, run, and manage applications
+Software Development Example: Developers use Heroku or Google App Engine to deploy web applications without 
+worrying about underlying infrastructure management.
+SaaS (Software as a Service)
+
+Delivers software applications over the internet on subscription basis
+Software Development Example: Teams use GitHub for version control, Slack for communication, and Jira for 
+project management - all accessed via web browsers.
+
+(b) Docker and Containerization
+
+What is Docker?
+Docker is a platform that uses containerization technology to package applications and their dependencies 
+into isolated, portable containers.
+
+Development Scenario
+In a microservices architecture, Docker would be used to containerize each service (user authentication, 
+payment processing, database, etc.). Each service runs in its own container with specific dependencies.
+
+Contribution to Development/Deployment
+
+Consistency: Eliminates "it works on my machine" problems
+Isolation: Services don't interfere with each other
+Portability: Containers run the same way on dev machines, testing environments, and production
+Rapid Deployment: Easy to scale and update individual services
+(c) n8n Deployment with Docker
+
+Docker Command:
+
+bash
+docker run -d --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n n8nio/n8n
+
+Command Explanation:
+
+docker run: Create and start a new container
+-d: Run in detached mode (background)
+--name n8n: Name the container "n8n"
+-p 5678:5678: Map host port 5678 to container port 5678
+-v n8n_data:/home/node/.n8n: Create volume for persistent data storage
+n8nio/n8n: Use the official n8n Docker image
+After running this command, you can access n8n at http://127.0.0.1:5678
+
