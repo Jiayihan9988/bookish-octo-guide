@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker Compose 演示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 700px;
+        }
+        h1 {
+            color: #f5576c;
+            margin-bottom: 20px;
+        }
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .service {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            margin: 0 10px;
+        }
+        .service h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐳 Docker Compose 演示</h1>
+        <p>这个应用由多个容器组成</p>
+        
+        <div class="services">
+            <div class="service">
+                <div class="icon">🌐</div>
+                <h3>Web 服务</h3>
+                <p>Nginx Alpine</p>
+            </div>
+            <div class="service">
+                <div class="icon">💾</div>
+                <h3>Redis 服务</h3>
+                <p>Redis Alpine</p>
+            </div>
+        </div>
+        
+        <p style="margin-top: 30px; color: #666;">
+            使用 <code>docker-compose up -d</code> 一键启动所有服务
+        </p>
+    </div>
+</body>
+</html>
+
