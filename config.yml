@@ -1,0 +1,68 @@
+# This is the nebula example configuration file. You must edit, at a minimum, the static_host_map, lighthouse, and firewall sections
+
+# PKI defines the location of credentials for this node.
+pki:
+  ca: /etc/nebula/ca.crt
+  cert: /etc/nebula/host.crt
+  key: /etc/nebula/host.key
+
+# The static host map defines a set of hosts with fixed IP addresses on the internet.
+# The syntax is: "{nebula ip}": ["{routable ip/dns name}:{routable port}"]
+static_host_map:
+  "192.168.100.1": ["198.51.100.1:4242"]
+
+lighthouse:
+  # am_lighthouse should be true ONLY on lighthouse nodes
+  am_lighthouse: false
+  # interval is the number of seconds between updates from this node to a lighthouse
+  interval: 60
+  # hosts is a list of lighthouse hosts this node should report to and query from
+  hosts:
+    - "192.168.100.1"
+
+# Port Nebula will be bound to on the host
+listen:
+  host: 0.0.0.0
+  port: 4242
+
+punchy:
+  # Continues to punch inbound/outbound at a regular interval to avoid expiration of firewall nat mappings
+  punch: true
+
+# Configure the private interface
+tun:
+  disabled: false
+  dev: nebula1
+  drop_local_broadcast: false
+  drop_multicast: false
+  tx_queue: 500
+  mtu: 1300
+
+# Configure logging level
+logging:
+  level: info
+  format: text
+
+# Nebula security group configuration
+firewall:
+  conntrack:
+    tcp_timeout: 12m
+    udp_timeout: 3m
+    default_timeout: 10m
+
+  outbound:
+    # Allow all outbound traffic from this node
+    - port: any
+      proto: any
+      host: any
+
+  inbound:
+    # Allow icmp between any nebula hosts
+    - port: any
+      proto: icmp
+      host: any
+    
+    # Allow SSH from any nebula host
+    - port: 22
+      proto: tcp
+      host: any

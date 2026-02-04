@@ -1,0 +1,79 @@
+/home/1/ - Nebula VPN 项目完整目录结构
+=====================================
+
+证书和密钥文件
+--------------
+ca.crt                          # CA 根证书 (243 bytes)
+ca.key                          # CA 私钥 ⚠️ 最敏感文件 (174 bytes)
+lighthouse.crt                  # 灯塔节点证书 (304 bytes)
+lighthouse.key                  # 灯塔节点私钥 (127 bytes)
+MBP15.crt                       # MBP15 节点证书 (296 bytes)
+MBP15.key                       # MBP15 节点私钥 (127 bytes)
+mini.crt                        # mini 节点证书 (296 bytes)
+mini.key                        # mini 节点私钥 (127 bytes)
+
+配置文件
+--------
+config.yml                      # 客户端配置模板 (1.7K)
+config-lighthouse.yml           # 灯塔配置模板 (1.1K)
+
+部署目录
+--------
+lighthouse/                     # 灯塔节点部署包
+├── nebula                      # Nebula 二进制 (17M)
+├── config.yaml                 # 灯塔配置文件
+├── ca.crt                      # CA 根证书
+├── host.crt                    # 节点证书
+└── host.key                    # 节点私钥
+
+MBP15/                          # MBP15 客户端部署包
+├── nebula                      # Nebula 二进制 (17M)
+├── config.yaml                 # 客户端配置文件
+├── ca.crt                      # CA 根证书
+├── host.crt                    # 节点证书
+└── host.key                    # 节点私钥
+
+mini/                           # mini 客户端部署包
+├── nebula                      # Nebula 二进制 (17M)
+├── config.yaml                 # 客户端配置文件
+├── ca.crt                      # CA 根证书
+├── host.crt                    # 节点证书
+└── host.key                    # 节点私钥
+
+启动脚本
+--------
+start-lighthouse.sh             # 灯塔节点启动脚本
+start-mbp15.sh                  # MBP15 客户端启动脚本
+start-mini.sh                   # mini 客户端启动脚本
+
+文档文件
+--------
+README.md                       # 项目说明和部署指南 (6.0K)
+NEBULA-SETUP-GUIDE.md          # 完整操作步骤文档 (详细)
+CONFIG-COMPARISON.md            # 配置文件对比说明 (4.9K)
+DEPLOYMENT-CHECKLIST.md         # 部署检查清单 (4.8K)
+PROJECT-SUMMARY.md              # 项目总结文档 (8.8K)
+DIRECTORY-STRUCTURE.txt         # 本文件 - 目录结构说明
+
+工具和源文件
+------------
+nebula                          # Nebula 主程序 (17M)
+nebula-cert                     # 证书管理工具 (6.6M)
+nebula-linux-amd64.tar.gz       # 原始压缩包 (13M)
+
+文件统计
+--------
+总文件数: 40+
+证书文件: 8 个
+配置文件: 2 个模板 + 3 个部署配置
+部署包: 3 个完整部署目录
+文档: 6 份详细文档
+脚本: 3 个启动脚本
+
+重要提示
+--------
+⚠️  ca.key 是最敏感的文件，必须安全保管，不要分发！
+✅  每个部署目录都包含完整的运行所需文件
+✅  所有文档都已完整编写
+✅  可以立即开始部署
+
